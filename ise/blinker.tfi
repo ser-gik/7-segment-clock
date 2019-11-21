@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+blinker instance_name (
+    .blink_pulse(blink_pulse), 
+    .blink_control(blink_control), 
+    .blink_out(blink_out)
+    );
+
+

@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+wall_clock instance_name (
+    .display_led_segments(display_led_segments), 
+    .display_led_enable_mask(display_led_enable_mask), 
+    .adjustment_next(adjustment_next), 
+    .adjustment_increment(adjustment_increment), 
+    .clk(clk)
+    );
+
+

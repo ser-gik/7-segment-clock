@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+board instance_name (
+    .CLK_100MHz(CLK_100MHz), 
+    .Switch(Switch), 
+    .IO_P6(IO_P6), 
+    .IO_P7(IO_P7)
+    );
+
+

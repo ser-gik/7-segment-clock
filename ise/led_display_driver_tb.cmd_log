@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/led_display_driver_tb.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/led_display_driver_tb.syr" 

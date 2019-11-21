@@ -1,0 +1,6 @@
+verilog work "../src/time_register.v"
+verilog work "../src/led_display_driver.v"
+verilog work "../src/blinker.v"
+verilog work "../src/adjust_inc_control.v"
+verilog work "../src/clock.v"
+verilog work "../src/mimas_v2/board.v"

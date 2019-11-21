@@ -1,0 +1,2 @@
+verilog work "../src/led_display_driver.v"
+verilog work "../src/led_display_driver_tb.v"

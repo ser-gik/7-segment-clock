@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="wall-clock.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name=".prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name=".stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name=".xst"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="adjust_inc_control.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="adjust_inc_control.stx"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="adjust_inc_control.tfi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="adjust_inc_control.xst"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="blinker.tfi"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="board.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="board.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="board.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="board.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="board.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="board.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="board.syr"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="board.tfi"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="board.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="board_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="board_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="board_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="led_display_driver.tfi"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="led_display_driver_tb.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="led_display_driver_tb.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="led_display_driver_tb.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="led_display_driver_tb.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="led_display_driver_tb.xst"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="led_display_driver_tb_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="time_register.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="time_register.stx"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="time_register.tfi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="time_register.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="wall_clock.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="wall_clock.stx"/>
+    <file xil_pn:fileType="FILE_VERILOG_INSTTEMPLATE" xil_pn:name="wall_clock.tfi"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="wall_clock.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-8465538077724400003" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3544540758449818909" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-3125321291657381953" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="250970745293037926" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574153508" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="-6749597584676571865" xil_pn:start_ts="1574153508">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1574154401" xil_pn:in_ck="1790293550869598328" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="1029663730795200140" xil_pn:start_ts="1574154384">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="board.lso"/>
+      <outfile xil_pn:name="board.ngc"/>
+      <outfile xil_pn:name="board.ngr"/>
+      <outfile xil_pn:name="board.prj"/>
+      <outfile xil_pn:name="board.stx"/>
+      <outfile xil_pn:name="board.syr"/>
+      <outfile xil_pn:name="board.xst"/>
+      <outfile xil_pn:name="board_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1574149978" xil_pn:in_ck="-1530102450843780326" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4066557905373062122" xil_pn:start_ts="1574149978">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
+
+</generated_project>

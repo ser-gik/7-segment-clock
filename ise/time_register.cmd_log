@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj wall-clock -o /home/ise/xilinks_ise_files/clock/ise/time_register.tfi -lib work /home/ise/xilinks_ise_files/clock/src//time_register.v -module time_register -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
