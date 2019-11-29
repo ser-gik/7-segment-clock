@@ -51,6 +51,14 @@ module wall_clock #(
     wire clk_1Hz;
     wire clk_adjust_reg;
 
+    tick_gen #(
+        .CLK_IN_RATE_HZ(100)
+        ) tick_generator (
+        .clk_in(clk), 
+        .reset(1'b0), 
+        .clk_out_1Hz(clk_1Hz), 
+        .clk_out_5Hz(clk_adjust_reg)
+        );
 
     wire[23:0] timer_out;
     wire timer_load;
@@ -68,6 +76,7 @@ module wall_clock #(
     wire[2:0] adjust_mode;
     wire[5:0] blink_out;
     
+    wire mode_ctrl_reset;
 
     time_register #(.HOURS_STYLE_AMERICAN(HOURS_STYLE_AMERICAN)) timer_reg (
         .time_bcd(timer_out), 
@@ -119,26 +128,27 @@ module wall_clock #(
         .increment_seconds(adjust_increment_seconds)
         );
 
+    mode_control mode_ctrl (
+        .next_mode(adjustment_next), 
+        .reset(mode_ctrl_reset), 
+        .timer_clk(clk_1Hz), 
+        .adjuster_clk(clk_adjust_reg), 
+        .clk(clk), 
+        .timer_load(timer_load), 
+        .adjuster_load(adjust_load), 
+        .reg_select(select_reg), 
+        .adjust_mode(adjust_mode)
+        );
 
-    assign clk_1Hz = clk;
-    assign clk_adjust_reg = clk;
-
-    assign timer_load = 1'b0;
-    assign adjust_load = 1'b0;
-
-    assign select_reg = clk;
-    assign adjust_mode = 2'b010;
-
-
+    watchdog #(
+        .NUM_SENSE_INPUTS(2),
+        .TICK_TO_BARK(10)
+        ) mode_watchdog (
+        .sense_inputs({adjustment_next, adjustment_increment}), 
+        .clk(clk_1Hz), 
+        .reset(1'b0), 
+        .bark(mode_ctrl_reset)
+        );
 
 endmodule
-
-
-
-
-
-
-
-
-
 

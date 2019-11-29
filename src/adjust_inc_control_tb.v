@@ -28,6 +28,8 @@ module adjust_inc_control_tb(
         for (i = 0; i < 10; i= i + 1) @(posedge clk);
         adjust_mode = 3'b001;
         for (i = 0; i < 10; i= i + 1) @(posedge clk);
+        adjust_mode = 3'b000;
+        for (i = 0; i < 10; i= i + 1) @(posedge clk);
         adjust_increment = 1'b0;
         for (i = 0; i < 2; i= i + 1) @(posedge clk);
         $finish;

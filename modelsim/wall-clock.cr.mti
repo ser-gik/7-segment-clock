@@ -1,39 +1,4 @@
-C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver_tb.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module led_display_driver_tb
-
-Top level modules:
-	led_display_driver_tb
-
-} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module blinker
-
-Top level modules:
-	blinker
-
-} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module time_register
-
-Top level modules:
-	time_register
-
-} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module adjust_inc_control
-
-Top level modules:
-	adjust_inc_control
-
-} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker_tb.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module blinker_tb
-
-Top level modules:
-	blinker_tb
-
-} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v
+C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module time_register_tb
 
@@ -47,11 +12,88 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	adjust_inc_control_tb
 
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module time_register
+
+Top level modules:
+	time_register
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tick_gen
+
+Top level modules:
+	tick_gen
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module blinker_tb
+
+Top level modules:
+	blinker_tb
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module watchdog_tb
+
+Top level modules:
+	watchdog_tb
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/blinker.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module blinker
+
+Top level modules:
+	blinker
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module watchdog
+
+Top level modules:
+	watchdog
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tick_gen_tb
+
+Top level modules:
+	tick_gen_tb
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module led_display_driver_tb
+
+Top level modules:
+	led_display_driver_tb
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mode_control_tb
+
+Top level modules:
+	mode_control_tb
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module adjust_inc_control
+
+Top level modules:
+	adjust_inc_control
+
 } {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/led_display_driver.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module led_display_driver
 
 Top level modules:
 	led_display_driver
+
+} {} {}} C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v {1 {vlog -work work -stats=none C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module mode_control
+
+Top level modules:
+	mode_control
 
 } {} {}}

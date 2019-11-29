@@ -1,4 +1,7 @@
+verilog work "../src/watchdog.v"
 verilog work "../src/time_register.v"
+verilog work "../src/tick_gen.v"
+verilog work "../src/mode_control.v"
 verilog work "../src/led_display_driver.v"
 verilog work "../src/blinker.v"
 verilog work "../src/adjust_inc_control.v"

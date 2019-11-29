@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+tick_gen instance_name (
+    .clk_in(clk_in), 
+    .reset(reset), 
+    .clk_out_1Hz(clk_out_1Hz), 
+    .clk_out_5Hz(clk_out_5Hz)
+    );
+
+

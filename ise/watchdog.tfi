@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+watchdog instance_name (
+    .sense_inputs(sense_inputs), 
+    .clk(clk), 
+    .reset(reset), 
+    .bark(bark)
+    );
+
+

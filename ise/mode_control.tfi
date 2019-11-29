@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+mode_control instance_name (
+    .next_mode(next_mode), 
+    .reset(reset), 
+    .timer_clk(timer_clk), 
+    .adjuster_clk(adjuster_clk), 
+    .clk(clk), 
+    .timer_load(timer_load), 
+    .adjuster_load(adjuster_load), 
+    .reg_select(reg_select), 
+    .adjust_mode(adjust_mode)
+    );
+
+

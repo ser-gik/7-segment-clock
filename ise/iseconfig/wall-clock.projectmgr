@@ -9,13 +9,13 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>wc - wall_clock (/home/ise/xilinks_ise_files/clock/src/clock.v)</SelectedItem>
+         <SelectedItem>board (/home/ise/xilinks_ise_files/clock/src/mimas_v2/board.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000213000000020000000000000000000000000200000064ffffffff000000810000000300000002000002130000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>wc - wall_clock (/home/ise/xilinks_ise_files/clock/src/clock.v)</CurrentItem>
+      <CurrentItem>board (/home/ise/xilinks_ise_files/clock/src/mimas_v2/board.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -37,13 +37,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>../src/adjust_inc_control_tb.v</SelectedItem>
+         <SelectedItem>../src/mode_control_tb.v</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000100000000000000000000000000000000000001fe000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ed0000000100000000000000290000000100000000000000840000000100000000000000640000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000001000000000000000000000000000000000000028a000000040101000100000000000000000000000064ffffffff000000810000000000000004000000ed0000000100000000000000290000000100000000000000840000000100000000000000f00000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>../src/adjust_inc_control_tb.v</CurrentItem>
+      <CurrentItem>../src/mode_control_tb.v</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -61,18 +61,17 @@
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
          <ClosedNode>Configure Target Device</ClosedNode>
-         <ClosedNode>Design Utilities</ClosedNode>
          <ClosedNode>Implement Design</ClosedNode>
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Design Summary/Reports</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000164000000010000000100000000000000000000000064ffffffff000000810000000000000001000001640000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000155000000010000000100000000000000000000000064ffffffff000000810000000000000001000001550000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Design Summary/Reports</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
@@ -83,13 +82,13 @@
          <ClosedNode>/time_register_tb |home|ise|xilinks_ise_files|clock|src|time_register_tb.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>blinker_tb (/home/ise/xilinks_ise_files/clock/src/blinker_tb.v)</SelectedItem>
+         <SelectedItem>tick_gen_tb (/home/ise/xilinks_ise_files/clock/src/tick_gen_tb.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001ff000000020000000000000000000000000200000064ffffffff000000810000000300000002000001ff0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>blinker_tb (/home/ise/xilinks_ise_files/clock/src/blinker_tb.v)</CurrentItem>
+      <CurrentItem>tick_gen_tb (/home/ise/xilinks_ise_files/clock/src/tick_gen_tb.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>

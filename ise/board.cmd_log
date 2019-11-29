@@ -20,3 +20,13 @@ xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/
 xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
 xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
 xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+xst -intstyle ise -ifn "/home/ise/xilinks_ise_files/clock/ise/board.xst" -ofn "/home/ise/xilinks_ise_files/clock/ise/board.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc /home/ise/xilinks_ise_files/clock/src/mimas_v2/MimasV2.ucf -p xc6slx9-csg324-2 board.ngc board.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o board_map.ncd board.ngd board.pcf 
+par -w -intstyle ise -ol high -mt off board_map.ncd board.ncd board.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml board.twx board.ncd -o board.twr board.pcf 
+bitgen -intstyle ise -f board.ut board.ncd 

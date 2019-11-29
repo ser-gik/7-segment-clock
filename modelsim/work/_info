@@ -30,13 +30,13 @@ r1
 !i113 1
 Z3 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
 vadjust_inc_control_tb
-!s110 1574318704
+!s110 1574648186
 !i10b 1
-!s100 c0dNCSS;mDOKlE4>SlZd;1
-IRYcYCkIAK9<7O8kTIhBBS3
+!s100 7]9TF`CPgjJNUEb?:hGzj2
+IG<zbhXL`]n2o6obYT86L@3
 R1
 R0
-w1574318696
+w1574648156
 8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control_tb.v
 FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control_tb.v
 L0 4
@@ -44,7 +44,7 @@ R2
 r1
 !s85 0
 31
-!s108 1574318704.000000
+!s108 1574648186.000000
 !s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/adjust_inc_control_tb.v|
 !s101 -O0
@@ -134,6 +134,90 @@ R5
 !s101 -O0
 !i113 1
 R3
+vmode_control
+!s110 1574979244
+!i10b 1
+!s100 hhOh[e;G_R?18UcJJDZh83
+IC6o[l6bYBM1Y?mIK2@Xh00
+R1
+R0
+w1574979224
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1574979244.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control.v|
+!s101 -O0
+!i113 1
+R3
+vmode_control_tb
+!s110 1574979297
+!i10b 1
+!s100 0[h`3aI7HY4AB7@9g2WfN1
+IKLlJG7Ai=<XGmZj0Z8mHJ2
+R1
+R0
+w1574979290
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1574979297.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/mode_control_tb.v|
+!s101 -O0
+!i113 1
+R3
+vtick_gen
+!s110 1575008812
+!i10b 1
+!s100 iinM=TgUCA^hA3fAIOPS33
+Ifh72T53:nWhAieCNCaKhG0
+R1
+R0
+w1575008792
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1575008812.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen.v|
+!s101 -O0
+!i113 1
+R3
+vtick_gen_tb
+!s110 1575008259
+!i10b 1
+!s100 cT@7mCTk48iXV9@P83Acl0
+I5QPJ<ciHG=6?<_C1@IaZ92
+R1
+R0
+w1575008244
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1575008259.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/tick_gen_tb.v|
+!s101 -O0
+!i113 1
+R3
 vtime_register
 !s110 1574143355
 !i10b 1
@@ -173,6 +257,48 @@ r1
 !s108 1574143356.000000
 !s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/time_register_tb.v|
+!s101 -O0
+!i113 1
+R3
+vwatchdog
+!s110 1575008348
+!i10b 1
+!s100 EAhL7T>3HI=i4l6XoYMmF3
+IR<>HfoKE^gWoWc[TF>hKc0
+R1
+R0
+w1575005882
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1575008348.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog.v|
+!s101 -O0
+!i113 1
+R3
+vwatchdog_tb
+!s110 1574993977
+!i10b 1
+!s100 h9530h]zobgHzdN1>5?5]2
+IP8gL[ndGo8W_8kYUG]gGg3
+R1
+R0
+w1574993967
+8C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v
+FC:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1574993976.000000
+!s107 C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/mgura/Desktop/xilinks_ise_files/clock/src/watchdog_tb.v|
 !s101 -O0
 !i113 1
 R3

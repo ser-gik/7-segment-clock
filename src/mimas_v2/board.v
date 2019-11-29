@@ -5,7 +5,7 @@ module board(
     input wire[1:0] Switch,
     output wire[7:0] IO_P6,
     output wire[7:0] IO_P7
-    );
+);
     assign adjustment_next = Switch[1];
     assign adjustment_increment = Switch[0];
     wire[7:0] display_led_segments;

@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj wall-clock -o /home/ise/xilinks_ise_files/clock/ise/watchdog.tfi -lib work /home/ise/xilinks_ise_files/clock/src//watchdog.v -module watchdog -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/xilinks_ise_files/clock/ise/board.ncd
+OUTFILE=/home/ise/xilinks_ise_files/clock/ise/board.bit
+FAMILY=Spartan6
+PART=xc6slx9-2csg324
+WORKINGDIR=/home/ise/xilinks_ise_files/clock/ise
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620
