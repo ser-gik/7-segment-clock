@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: board.prj
@@ -120,7 +120,7 @@ Analyzing Verilog file "/home/ise/xilinks_ise_files/clock/src/mode_control.v" in
 Parsing module <mode_control>.
 Analyzing Verilog file "/home/ise/xilinks_ise_files/clock/src/led_display_driver.v" into library work
 Parsing module <led_display_driver>.
-INFO:HDLCompiler:693 - "/home/ise/xilinks_ise_files/clock/src/led_display_driver.v" Line 24. parameter declaration becomes local in led_display_driver with formal parameter declaration list
+INFO:HDLCompiler:693 - "/home/ise/xilinks_ise_files/clock/src/led_display_driver.v" Line 25. parameter declaration becomes local in led_display_driver with formal parameter declaration list
 Analyzing Verilog file "/home/ise/xilinks_ise_files/clock/src/blinker.v" into library work
 Parsing module <blinker>.
 Analyzing Verilog file "/home/ise/xilinks_ise_files/clock/src/adjust_inc_control.v" into library work
@@ -139,7 +139,7 @@ Elaborating module <board>.
 
 Elaborating module <wall_clock(CLK_RATE_HZ=100000000)>.
 
-Elaborating module <tick_gen(CLK_IN_RATE_HZ=100)>.
+Elaborating module <tick_gen(CLK_IN_RATE_HZ=100000000)>.
 
 Elaborating module <time_register(HOURS_STYLE_AMERICAN=0)>.
 
@@ -167,26 +167,26 @@ Synthesizing Unit <wall_clock>.
     Related source file is "/home/ise/xilinks_ise_files/clock/src/clock.v".
         CLK_RATE_HZ = 100000000
         HOURS_STYLE_AMERICAN = 0
-INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 81: Output port <will_wraparound_hours> of the instance <timer_reg> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 94: Output port <will_wraparound_hours> of the instance <adjust_reg> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 94: Output port <will_wraparound_minutes> of the instance <adjust_reg> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 94: Output port <will_wraparound_seconds> of the instance <adjust_reg> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 84: Output port <will_wraparound_hours> of the instance <timer_reg> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 97: Output port <will_wraparound_hours> of the instance <adjust_reg> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 97: Output port <will_wraparound_minutes> of the instance <adjust_reg> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/xilinks_ise_files/clock/src/clock.v" line 97: Output port <will_wraparound_seconds> of the instance <adjust_reg> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <wall_clock> synthesized.
 
 Synthesizing Unit <tick_gen>.
     Related source file is "/home/ise/xilinks_ise_files/clock/src/tick_gen.v".
-        CLK_IN_RATE_HZ = 100
+        CLK_IN_RATE_HZ = 100000000
     Found 3-bit register for signal <counter_1Hz>.
     Found 1-bit register for signal <clk_out_1Hz>.
     Found 1-bit register for signal <clk_out_5Hz>.
-    Found 6-bit register for signal <counter>.
+    Found 26-bit register for signal <counter>.
     Found 3-bit adder for signal <counter_1Hz[2]_GND_3_o_add_3_OUT> created at line 31.
-    Found 6-bit adder for signal <counter[5]_GND_3_o_add_5_OUT> created at line 34.
+    Found 26-bit adder for signal <counter[25]_GND_3_o_add_5_OUT> created at line 34.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  11 D-type flip-flop(s).
+	inferred  31 D-type flip-flop(s).
 Unit <tick_gen> synthesized.
 
 Synthesizing Unit <time_register>.
@@ -226,12 +226,12 @@ Synthesizing Unit <led_display_driver>.
         CLK_RATE_HZ = 100000000
     Found 6-bit register for signal <current_active>.
     Found 8-bit register for signal <display_led_segments>.
-    Found 18-bit register for signal <div_stages>.
-    Found 18-bit adder for signal <div_stages[17]_GND_6_o_mux_2_OUT> created at line 31.
+    Found 17-bit register for signal <div_stages>.
+    Found 17-bit adder for signal <div_stages[16]_GND_6_o_add_1_OUT> created at line 32.
     HDL ADVISOR - Describing an operational reset or an explicit power-up state for register <current_active> would allow inference of a finite state machine and as consequence better performance and smaller area.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  32 D-type flip-flop(s).
+	inferred  31 D-type flip-flop(s).
 Unit <led_display_driver> synthesized.
 
 Synthesizing Unit <adjust_inc_control>.
@@ -279,15 +279,13 @@ Synthesizing Unit <watchdog>.
     Related source file is "/home/ise/xilinks_ise_files/clock/src/watchdog.v".
         NUM_SENSE_INPUTS = 2
         TICK_TO_BARK = 10
-    Found 2-bit register for signal <prev_sense_inputs>.
     Found 1-bit register for signal <out_enable>.
     Found 5-bit register for signal <counter>.
-    Found 5-bit adder for signal <counter[4]_GND_9_o_add_4_OUT> created at line 30.
-    Found 2-bit comparator equal for signal <n0002> created at line 26
+    Found 5-bit adder for signal <counter[4]_GND_9_o_add_4_OUT> created at line 27.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   8 D-type flip-flop(s).
-	inferred   1 Comparator(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <watchdog> synthesized.
 
 =========================================================================
@@ -295,32 +293,32 @@ HDL Synthesis Report
 
 Macro Statistics
 # Adders/Subtractors                                   : 17
- 18-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 26-bit adder                                          : 1
  3-bit adder                                           : 1
  4-bit adder                                           : 6
  4-bit subtractor                                      : 1
  5-bit adder                                           : 1
- 6-bit adder                                           : 1
  8-bit adder                                           : 6
-# Registers                                            : 23
+# Registers                                            : 22
  1-bit register                                        : 8
- 18-bit register                                       : 1
- 2-bit register                                        : 1
+ 17-bit register                                       : 1
+ 26-bit register                                       : 1
  3-bit register                                        : 2
  4-bit register                                        : 1
  5-bit register                                        : 1
- 6-bit register                                        : 2
+ 6-bit register                                        : 1
  8-bit register                                        : 7
-# Comparators                                          : 16
- 2-bit comparator equal                                : 1
+# Comparators                                          : 15
  3-bit comparator equal                                : 1
  4-bit comparator greater                              : 6
  4-bit comparator lessequal                            : 8
-# Multiplexers                                         : 19
+# Multiplexers                                         : 20
  1-bit 2-to-1 multiplexer                              : 2
  2-bit 2-to-1 multiplexer                              : 3
  24-bit 2-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
  8-bit 2-to-1 multiplexer                              : 12
 # FSMs                                                 : 1
 
@@ -330,7 +328,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:1710 - FF/Latch <display_led_segments_0> (without init value) has a constant value of 0 in block <leds>. This FF/Latch will be trimmed during the optimization process.
 
 Synthesizing (advanced) Unit <adjust_inc_control>.
 The following registers are absorbed into counter <ticks_to_cont>: 1 register on signal <ticks_to_cont>.
@@ -357,15 +354,14 @@ Macro Statistics
  4-bit adder                                           : 6
  8-bit adder                                           : 6
 # Counters                                             : 5
- 18-bit up counter                                     : 1
+ 17-bit up counter                                     : 1
+ 26-bit up counter                                     : 1
  3-bit up counter                                      : 1
  4-bit down counter                                    : 1
  5-bit up counter                                      : 1
- 6-bit up counter                                      : 1
-# Registers                                            : 75
- Flip-Flops                                            : 75
-# Comparators                                          : 16
- 2-bit comparator equal                                : 1
+# Registers                                            : 73
+ Flip-Flops                                            : 73
+# Comparators                                          : 15
  3-bit comparator equal                                : 1
  4-bit comparator greater                              : 6
  4-bit comparator lessequal                            : 8
@@ -381,7 +377,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <display_led_segments_0> (without init value) has a constant value of 0 in block <led_display_driver>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <wc/mode_ctrl/FSM_2> on signal <adjust_mode[1:2]> with gray encoding.
 -------------------
@@ -406,17 +401,26 @@ Optimizing unit <tick_gen> ...
 Optimizing unit <led_display_driver> ...
 
 Optimizing unit <time_register> ...
-
-Optimizing unit <watchdog> ...
-WARNING:Xst:1710 - FF/Latch <wc/adjust_pulse_gen/ticks_to_cont_3> (without init value) has a constant value of 0 in block <board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wc/mode_watchdog/counter_4> (without init value) has a constant value of 0 in block <board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wc/adjust_pulse_gen/ticks_to_cont_3> (without init value) has a constant value of 0 in block <board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wc/tick_generator/counter_25> (without init value) has a constant value of 0 in block <board>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <wc/tick_generator/counter_24> (without init value) has a constant value of 0 in block <board>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_0> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_0> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_1> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_1> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_2> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_2> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_3> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_3> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_4> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_4> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_5> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_5> 
+INFO:Xst:2261 - The FF/Latch <wc/tick_generator/counter_6> in Unit <board> is equivalent to the following FF/Latch, which will be removed : <wc/leds/div_stages_6> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block board, actual ratio is 5.
-FlipFlop wc/leds/current_active_2 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block board, actual ratio is 6.
+FlipFlop wc/leds/current_active_0 has been replicated 1 time(s)
+FlipFlop wc/leds/current_active_1 has been replicated 1 time(s)
+FlipFlop wc/leds/current_active_2 has been replicated 2 time(s)
 FlipFlop wc/leds/current_active_3 has been replicated 1 time(s)
-FlipFlop wc/leds/current_active_4 has been replicated 1 time(s)
+FlipFlop wc/leds/current_active_4 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -424,8 +428,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 113
- Flip-Flops                                            : 113
+# Registers                                            : 126
+ Flip-Flops                                            : 126
 
 =========================================================================
 
@@ -448,31 +452,29 @@ Top Level Output File Name         : board.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 312
+# BELS                             : 409
 #      GND                         : 1
-#      INV                         : 6
-#      LUT1                        : 17
-#      LUT2                        : 14
-#      LUT3                        : 14
-#      LUT4                        : 55
-#      LUT5                        : 37
-#      LUT6                        : 130
-#      MUXCY                       : 17
-#      MUXF7                       : 3
+#      INV                         : 13
+#      LUT1                        : 39
+#      LUT2                        : 12
+#      LUT3                        : 12
+#      LUT4                        : 50
+#      LUT5                        : 43
+#      LUT6                        : 163
+#      MUXCY                       : 39
+#      MUXF7                       : 2
 #      VCC                         : 1
-#      XORCY                       : 17
-# FlipFlops/Latches                : 113
-#      FD                          : 54
-#      FDE                         : 2
-#      FDR                         : 13
-#      FDRE                        : 40
-#      FDS                         : 1
+#      XORCY                       : 34
+# FlipFlops/Latches                : 126
+#      FD                          : 67
+#      FDR                         : 19
+#      FDRE                        : 37
 #      FDSE                        : 3
-# Clock Buffers                    : 3
-#      BUFG                        : 2
+# Clock Buffers                    : 4
+#      BUFG                        : 3
 #      BUFGP                       : 1
-# IO Buffers                       : 18
-#      IBUF                        : 2
+# IO Buffers                       : 19
+#      IBUF                        : 3
 #      OBUF                        : 16
 
 Device utilization summary:
@@ -482,23 +484,23 @@ Selected Device : 6slx9csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             113  out of  11440     0%  
- Number of Slice LUTs:                  273  out of   5720     4%  
-    Number used as Logic:               273  out of   5720     4%  
+ Number of Slice Registers:             126  out of  11440     1%  
+ Number of Slice LUTs:                  332  out of   5720     5%  
+    Number used as Logic:               332  out of   5720     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    279
-   Number with an unused Flip Flop:     166  out of    279    59%  
-   Number with an unused LUT:             6  out of    279     2%  
-   Number of fully used LUT-FF pairs:   107  out of    279    38%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:    342
+   Number with an unused Flip Flop:     216  out of    342    63%  
+   Number with an unused LUT:            10  out of    342     2%  
+   Number of fully used LUT-FF pairs:   116  out of    342    33%  
+   Number of unique control sets:        14
 
 IO Utilization: 
- Number of IOs:                          19
- Number of bonded IOBs:                  19  out of    200     9%  
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    200    10%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
 Partition Resource Summary:
@@ -518,15 +520,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)               | Load  |
------------------------------------+-------------------------------------+-------+
-CLK_100MHz                         | BUFGP                               | 35    |
-wc/tick_generator/clk_out_5Hz      | BUFG                                | 30    |
-wc/leds/div_stages_17              | NONE(wc/leds/display_led_segments_7)| 16    |
-wc/tick_generator/clk_out_1Hz      | BUFG                                | 32    |
------------------------------------+-------------------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+wc/tick_generator/clk_out_1Hz      | BUFG                   | 29    |
+CLK_100MHz                         | BUFGP                  | 46    |
+wc/tick_generator/clk_out_5Hz      | BUFG                   | 30    |
+wc/leds/div_stages_16              | BUFG                   | 21    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -536,9 +537,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.751ns (Maximum Frequency: 173.883MHz)
-   Minimum input arrival time before clock: 5.462ns
-   Maximum output required time after clock: 6.398ns
+   Minimum period: 5.074ns (Maximum Frequency: 197.077MHz)
+   Minimum input arrival time before clock: 5.636ns
+   Maximum output required time after clock: 6.487ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -546,127 +547,147 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'CLK_100MHz'
-  Clock period: 4.530ns (frequency: 220.751MHz)
-  Total number of paths / destination ports: 332 / 48
--------------------------------------------------------------------------
-Delay:               4.530ns (Levels of Logic = 2)
-  Source:            wc/tick_generator/counter_4 (FF)
-  Destination:       wc/tick_generator/counter_1Hz_2 (FF)
-  Source Clock:      CLK_100MHz rising
-  Destination Clock: CLK_100MHz rising
-
-  Data Path: wc/tick_generator/counter_4 to wc/tick_generator/counter_1Hz_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              3   0.525   1.196  wc/tick_generator/counter_4 (wc/tick_generator/counter_4)
-     LUT6:I1->O           11   0.254   1.039  wc/tick_generator/_n003711 (wc/tick_generator/_n00371)
-     LUT4:I3->O            4   0.254   0.803  wc/tick_generator/_n00372 (wc/tick_generator/_n0037)
-     FDRE:R                    0.459          wc/tick_generator/counter_1Hz_0
-    ----------------------------------------
-    Total                      4.530ns (1.492ns logic, 3.038ns route)
-                                       (32.9% logic, 67.1% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'wc/tick_generator/clk_out_5Hz'
-  Clock period: 4.579ns (frequency: 218.388MHz)
-  Total number of paths / destination ports: 540 / 78
--------------------------------------------------------------------------
-Delay:               4.579ns (Levels of Logic = 2)
-  Source:            wc/adjust_reg/seconds_2 (FF)
-  Destination:       wc/adjust_reg/seconds_7 (FF)
-  Source Clock:      wc/tick_generator/clk_out_5Hz rising
-  Destination Clock: wc/tick_generator/clk_out_5Hz rising
-
-  Data Path: wc/adjust_reg/seconds_2 to wc/adjust_reg/seconds_7
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDRE:C->Q             7   0.525   1.340  wc/adjust_reg/seconds_2 (wc/adjust_reg/seconds_2)
-     LUT5:I0->O            4   0.254   0.804  wc/adjust_reg/_n009241 (wc/adjust_reg/_n0092_bdd4)
-     LUT6:I5->O            8   0.254   0.943  wc/adjust_reg/_n009211 (wc/adjust_reg/_n0092)
-     FDRE:R                    0.459          wc/adjust_reg/seconds_0
-    ----------------------------------------
-    Total                      4.579ns (1.492ns logic, 3.087ns route)
-                                       (32.6% logic, 67.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'wc/leds/div_stages_17'
-  Clock period: 5.097ns (frequency: 196.194MHz)
-  Total number of paths / destination ports: 438 / 16
--------------------------------------------------------------------------
-Delay:               5.097ns (Levels of Logic = 4)
-  Source:            wc/leds/current_active_5 (FF)
-  Destination:       wc/leds/display_led_segments_2 (FF)
-  Source Clock:      wc/leds/div_stages_17 rising
-  Destination Clock: wc/leds/div_stages_17 rising
-
-  Data Path: wc/leds/current_active_5 to wc/leds/display_led_segments_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              13   0.525   1.098  wc/leds/current_active_5 (wc/leds/current_active_5)
-     LUT4:I3->O            9   0.254   0.976  wc/leds/current_active[5]_X_6_o_select_133_OUT<1>31 (wc/leds/current_active[5]_X_6_o_select_133_OUT<1>3)
-     LUT6:I5->O            1   0.254   0.682  wc/leds/current_active[5]_X_6_o_select_133_OUT<2>22 (wc/leds/current_active[5]_X_6_o_select_133_OUT<2>22)
-     LUT6:I5->O            2   0.254   0.726  wc/leds/current_active[5]_X_6_o_select_133_OUT<2>23 (wc/leds/current_active[5]_X_6_o_select_133_OUT<2>2)
-     LUT6:I5->O            1   0.254   0.000  wc/leds/current_active[5]_X_6_o_select_133_OUT<2>7 (wc/leds/current_active[5]_X_6_o_select_133_OUT<2>)
-     FD:D                      0.074          wc/leds/display_led_segments_2
-    ----------------------------------------
-    Total                      5.097ns (1.615ns logic, 3.482ns route)
-                                       (31.7% logic, 68.3% route)
-
-=========================================================================
 Timing constraint: Default period analysis for Clock 'wc/tick_generator/clk_out_1Hz'
-  Clock period: 5.751ns (frequency: 173.883MHz)
-  Total number of paths / destination ports: 646 / 49
+  Clock period: 4.855ns (frequency: 205.973MHz)
+  Total number of paths / destination ports: 921 / 42
 -------------------------------------------------------------------------
-Delay:               5.751ns (Levels of Logic = 4)
-  Source:            wc/timer_reg/seconds_2 (FF)
+Delay:               4.855ns (Levels of Logic = 3)
+  Source:            wc/timer_reg/seconds_7 (FF)
   Destination:       wc/timer_reg/minutes_7 (FF)
   Source Clock:      wc/tick_generator/clk_out_1Hz rising
   Destination Clock: wc/tick_generator/clk_out_1Hz rising
 
-  Data Path: wc/timer_reg/seconds_2 to wc/timer_reg/minutes_7
+  Data Path: wc/timer_reg/seconds_7 to wc/timer_reg/minutes_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             7   0.525   1.340  wc/timer_reg/seconds_2 (wc/timer_reg/seconds_2)
-     LUT5:I0->O            6   0.254   0.876  wc/timer_reg/_n009241 (wc/timer_reg/_n0092_bdd4)
-     LUT4:I3->O            9   0.254   0.976  wc/timer_reg/will_wraparound_seconds11 (wc/timer_will_wraparound_seconds)
-     LUT6:I5->O            8   0.254   0.944  wc/timer_reg/_n008411 (wc/timer_reg/_n0084)
-     LUT4:I3->O            1   0.254   0.000  wc/timer_reg/minutes_7_rstpot (wc/timer_reg/minutes_7_rstpot)
+     FDRE:C->Q            10   0.525   1.284  wc/timer_reg/seconds_7 (wc/timer_reg/seconds_7)
+     LUT5:I1->O            3   0.254   1.196  wc/timer_reg/will_wraparound_seconds11_SW3 (N84)
+     LUT5:I0->O            7   0.254   1.018  wc/timer_reg/_n008411_SW1 (N89)
+     LUT6:I4->O            1   0.250   0.000  wc/timer_reg/minutes_7_rstpot (wc/timer_reg/minutes_7_rstpot)
      FD:D                      0.074          wc/timer_reg/minutes_7
     ----------------------------------------
-    Total                      5.751ns (1.615ns logic, 4.136ns route)
-                                       (28.1% logic, 71.9% route)
+    Total                      4.855ns (1.357ns logic, 3.498ns route)
+                                       (28.0% logic, 72.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_100MHz'
+  Clock period: 5.074ns (frequency: 197.077MHz)
+  Total number of paths / destination ports: 1251 / 46
+-------------------------------------------------------------------------
+Delay:               5.074ns (Levels of Logic = 3)
+  Source:            wc/tick_generator/counter_7 (FF)
+  Destination:       wc/tick_generator/counter_1Hz_1 (FF)
+  Source Clock:      CLK_100MHz rising
+  Destination Clock: CLK_100MHz rising
+
+  Data Path: wc/tick_generator/counter_7 to wc/tick_generator/counter_1Hz_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   1.181  wc/tick_generator/counter_7 (wc/tick_generator/counter_7)
+     LUT6:I0->O           28   0.254   1.681  wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>3 (wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>2)
+     LUT6:I3->O            3   0.235   0.874  wc/tick_generator/Mcount_counter_1Hz_val1 (wc/tick_generator/Mcount_counter_1Hz_val)
+     LUT4:I2->O            1   0.250   0.000  wc/tick_generator/counter_1Hz_1_rstpot (wc/tick_generator/counter_1Hz_1_rstpot)
+     FD:D                      0.074          wc/tick_generator/counter_1Hz_1
+    ----------------------------------------
+    Total                      5.074ns (1.338ns logic, 3.736ns route)
+                                       (26.4% logic, 73.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'wc/tick_generator/clk_out_5Hz'
+  Clock period: 4.545ns (frequency: 220.022MHz)
+  Total number of paths / destination ports: 540 / 78
+-------------------------------------------------------------------------
+Delay:               4.545ns (Levels of Logic = 2)
+  Source:            wc/adjust_reg/minutes_4 (FF)
+  Destination:       wc/adjust_reg/minutes_7 (FF)
+  Source Clock:      wc/tick_generator/clk_out_5Hz rising
+  Destination Clock: wc/tick_generator/clk_out_5Hz rising
+
+  Data Path: wc/adjust_reg/minutes_4 to wc/adjust_reg/minutes_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             6   0.525   1.306  wc/adjust_reg/minutes_4 (wc/adjust_reg/minutes_4)
+     LUT5:I0->O            4   0.254   0.804  wc/adjust_reg/_n008441 (wc/adjust_reg/_n0084_bdd4)
+     LUT6:I5->O            8   0.254   0.943  wc/adjust_reg/_n008411 (wc/adjust_reg/_n0084)
+     FDRE:R                    0.459          wc/adjust_reg/minutes_0
+    ----------------------------------------
+    Total                      4.545ns (1.492ns logic, 3.053ns route)
+                                       (32.8% logic, 67.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'wc/leds/div_stages_16'
+  Clock period: 4.675ns (frequency: 213.904MHz)
+  Total number of paths / destination ports: 330 / 21
+-------------------------------------------------------------------------
+Delay:               4.675ns (Levels of Logic = 3)
+  Source:            wc/leds/current_active_3 (FF)
+  Destination:       wc/leds/display_led_segments_2 (FF)
+  Source Clock:      wc/leds/div_stages_16 rising
+  Destination Clock: wc/leds/div_stages_16 rising
+
+  Data Path: wc/leds/current_active_3 to wc/leds/display_led_segments_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              20   0.525   1.286  wc/leds/current_active_3 (wc/leds/current_active_3)
+     LUT5:I4->O            1   0.254   1.137  wc/leds/current_active[5]_X_6_o_select_139_OUT<2>2 (wc/leds/current_active[5]_X_6_o_select_139_OUT<2>2)
+     LUT6:I0->O            1   0.254   0.910  wc/leds/current_active[5]_X_6_o_select_139_OUT<2>3 (wc/leds/current_active[5]_X_6_o_select_139_OUT<2>3)
+     LUT6:I3->O            1   0.235   0.000  wc/leds/current_active[5]_X_6_o_select_139_OUT<2>7 (wc/leds/current_active[5]_X_6_o_select_139_OUT<2>)
+     FD:D                      0.074          wc/leds/display_led_segments_2
+    ----------------------------------------
+    Total                      4.675ns (1.342ns logic, 3.333ns route)
+                                       (28.7% logic, 71.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'wc/tick_generator/clk_out_1Hz'
+  Total number of paths / destination ports: 26 / 14
+-------------------------------------------------------------------------
+Offset:              4.840ns (Levels of Logic = 3)
+  Source:            Switch<0> (PAD)
+  Destination:       wc/mode_watchdog/out_enable (FF)
+  Destination Clock: wc/tick_generator/clk_out_1Hz rising
+
+  Data Path: Switch<0> to wc/mode_watchdog/out_enable
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.328   1.182  Switch_0_IBUF (Switch_0_IBUF)
+     LUT2:I1->O            1   0.254   0.682  wc/mode_watchdog/_n00332_SW0 (N2)
+     LUT6:I5->O            1   0.254   0.681  wc/mode_watchdog/_n00332 (wc/mode_watchdog/_n0033)
+     FDR:R                     0.459          wc/mode_watchdog/out_enable
+    ----------------------------------------
+    Total                      4.840ns (2.295ns logic, 2.545ns route)
+                                       (47.4% logic, 52.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_100MHz'
-  Total number of paths / destination ports: 5 / 5
+  Total number of paths / destination ports: 44 / 44
 -------------------------------------------------------------------------
-Offset:              3.916ns (Levels of Logic = 3)
-  Source:            Switch<1> (PAD)
-  Destination:       wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
+Offset:              4.688ns (Levels of Logic = 3)
+  Source:            Switch<2> (PAD)
+  Destination:       wc/tick_generator/counter_1Hz_1 (FF)
   Destination Clock: CLK_100MHz rising
 
-  Data Path: Switch<1> to wc/mode_ctrl/adjust_mode_FSM_FFd2
+  Data Path: Switch<2> to wc/tick_generator/counter_1Hz_1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   1.328   1.220  Switch_1_IBUF (Switch_1_IBUF)
-     LUT4:I0->O            1   0.254   0.790  wc/mode_ctrl/adjust_mode_FSM_FFd2-In2 (wc/mode_ctrl/adjust_mode_FSM_FFd2-In2)
-     LUT6:I4->O            1   0.250   0.000  wc/mode_ctrl/adjust_mode_FSM_FFd2-In3 (wc/mode_ctrl/adjust_mode_FSM_FFd2-In)
-     FDR:D                     0.074          wc/mode_ctrl/adjust_mode_FSM_FFd2
+     IBUF:I->O            28   1.328   1.908  Switch_2_IBUF (Switch_2_IBUF)
+     LUT6:I0->O            3   0.254   0.874  wc/tick_generator/Mcount_counter_1Hz_val1 (wc/tick_generator/Mcount_counter_1Hz_val)
+     LUT4:I2->O            1   0.250   0.000  wc/tick_generator/counter_1Hz_1_rstpot (wc/tick_generator/counter_1Hz_1_rstpot)
+     FD:D                      0.074          wc/tick_generator/counter_1Hz_1
     ----------------------------------------
-    Total                      3.916ns (1.906ns logic, 2.010ns route)
-                                       (48.7% logic, 51.3% route)
+    Total                      4.688ns (1.906ns logic, 2.782ns route)
+                                       (40.7% logic, 59.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'wc/tick_generator/clk_out_5Hz'
   Total number of paths / destination ports: 51 / 51
 -------------------------------------------------------------------------
-Offset:              5.462ns (Levels of Logic = 3)
+Offset:              5.636ns (Levels of Logic = 3)
   Source:            Switch<0> (PAD)
   Destination:       wc/adjust_reg/hours_7 (FF)
   Destination Clock: wc/tick_generator/clk_out_5Hz rising
@@ -675,73 +696,53 @@ Offset:              5.462ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            10   1.328   1.438  Switch_0_IBUF (Switch_0_IBUF)
+     IBUF:I->O            16   1.328   1.612  Switch_0_IBUF (Switch_0_IBUF)
      LUT5:I0->O            1   0.254   0.790  wc/adjust_pulse_gen/n0022<0>1 (wc/adjust_increment_seconds)
      LUT6:I4->O            8   0.250   0.943  wc/adjust_reg/_n009211 (wc/adjust_reg/_n0092)
      FDRE:R                    0.459          wc/adjust_reg/seconds_0
     ----------------------------------------
-    Total                      5.462ns (2.291ns logic, 3.171ns route)
-                                       (41.9% logic, 58.1% route)
+    Total                      5.636ns (2.291ns logic, 3.345ns route)
+                                       (40.6% logic, 59.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'wc/tick_generator/clk_out_1Hz'
-  Total number of paths / destination ports: 16 / 9
+Timing constraint: Default OFFSET OUT AFTER for Clock 'wc/leds/div_stages_16'
+  Total number of paths / destination ports: 14 / 14
 -------------------------------------------------------------------------
-Offset:              4.069ns (Levels of Logic = 2)
-  Source:            Switch<1> (PAD)
-  Destination:       wc/mode_watchdog/counter_3 (FF)
-  Destination Clock: wc/tick_generator/clk_out_1Hz rising
+Offset:              5.934ns (Levels of Logic = 2)
+  Source:            wc/leds/current_active_3 (FF)
+  Destination:       IO_P7<3> (PAD)
+  Source Clock:      wc/leds/div_stages_16 rising
 
-  Data Path: Switch<1> to wc/mode_watchdog/counter_3
+  Data Path: wc/leds/current_active_3 to IO_P7<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   1.328   1.172  Switch_1_IBUF (Switch_1_IBUF)
-     LUT4:I1->O            6   0.235   0.875  wc/mode_watchdog/n0002_inv1 (wc/mode_watchdog/n0002_inv)
-     FDSE:S                    0.459          wc/mode_watchdog/counter_0
+     FD:C->Q              20   0.525   1.562  wc/leds/current_active_3 (wc/leds/current_active_3)
+     LUT4:I0->O            1   0.254   0.681  IO_P7<5:0><3>1 (IO_P7_3_OBUF)
+     OBUF:I->O                 2.912          IO_P7_3_OBUF (IO_P7<3>)
     ----------------------------------------
-    Total                      4.069ns (2.022ns logic, 2.047ns route)
-                                       (49.7% logic, 50.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'wc/leds/div_stages_17'
-  Total number of paths / destination ports: 13 / 13
--------------------------------------------------------------------------
-Offset:              6.135ns (Levels of Logic = 2)
-  Source:            wc/leds/current_active_4 (FF)
-  Destination:       IO_P7<4> (PAD)
-  Source Clock:      wc/leds/div_stages_17 rising
-
-  Data Path: wc/leds/current_active_4 to IO_P7<4>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              30   0.525   1.763  wc/leds/current_active_4 (wc/leds/current_active_4)
-     LUT4:I0->O            1   0.254   0.681  wc/leds/display_led_enable_mask<4>1 (IO_P7_4_OBUF)
-     OBUF:I->O                 2.912          IO_P7_4_OBUF (IO_P7<4>)
-    ----------------------------------------
-    Total                      6.135ns (3.691ns logic, 2.444ns route)
-                                       (60.2% logic, 39.8% route)
+    Total                      5.934ns (3.691ns logic, 2.243ns route)
+                                       (62.2% logic, 37.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_100MHz'
   Total number of paths / destination ports: 18 / 6
 -------------------------------------------------------------------------
-Offset:              6.398ns (Levels of Logic = 2)
-  Source:            wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
+Offset:              6.487ns (Levels of Logic = 2)
+  Source:            wc/mode_ctrl/adjust_mode_FSM_FFd1 (FF)
   Destination:       IO_P7<5> (PAD)
   Source Clock:      CLK_100MHz rising
 
-  Data Path: wc/mode_ctrl/adjust_mode_FSM_FFd2 to IO_P7<5>
+  Data Path: wc/mode_ctrl/adjust_mode_FSM_FFd1 to IO_P7<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             63   0.525   2.030  wc/mode_ctrl/adjust_mode_FSM_FFd2 (wc/mode_ctrl/adjust_mode_FSM_FFd2)
-     LUT4:I2->O            1   0.250   0.681  wc/leds/display_led_enable_mask<2>1 (IO_P7_2_OBUF)
-     OBUF:I->O                 2.912          IO_P7_2_OBUF (IO_P7<2>)
+     FDR:C->Q             61   0.525   2.134  wc/mode_ctrl/adjust_mode_FSM_FFd1 (wc/mode_ctrl/adjust_mode_FSM_FFd1)
+     LUT4:I1->O            1   0.235   0.681  IO_P7<5:0><5>1 (IO_P7_5_OBUF)
+     OBUF:I->O                 2.912          IO_P7_5_OBUF (IO_P7<5>)
     ----------------------------------------
-    Total                      6.398ns (3.687ns logic, 2.711ns route)
-                                       (57.6% logic, 42.4% route)
+    Total                      6.487ns (3.672ns logic, 2.815ns route)
+                                       (56.6% logic, 43.4% route)
 
 =========================================================================
 
@@ -753,19 +754,19 @@ Clock to Setup on destination clock CLK_100MHz
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK_100MHz                   |    4.530|         |         |         |
-wc/tick_generator/clk_out_1Hz|    3.418|         |         |         |
+CLK_100MHz                   |    5.074|         |         |         |
+wc/tick_generator/clk_out_1Hz|    3.333|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock wc/leds/div_stages_17
+Clock to Setup on destination clock wc/leds/div_stages_16
 -----------------------------+---------+---------+---------+---------+
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK_100MHz                   |    8.284|         |         |         |
-wc/leds/div_stages_17        |    5.097|         |         |         |
-wc/tick_generator/clk_out_1Hz|    7.192|         |         |         |
-wc/tick_generator/clk_out_5Hz|    7.437|         |         |         |
+CLK_100MHz                   |    8.252|         |         |         |
+wc/leds/div_stages_16        |    4.675|         |         |         |
+wc/tick_generator/clk_out_1Hz|    7.145|         |         |         |
+wc/tick_generator/clk_out_5Hz|    7.389|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock wc/tick_generator/clk_out_1Hz
@@ -773,9 +774,9 @@ Clock to Setup on destination clock wc/tick_generator/clk_out_1Hz
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK_100MHz                   |    4.361|         |         |         |
-wc/tick_generator/clk_out_1Hz|    5.751|         |         |         |
-wc/tick_generator/clk_out_5Hz|    3.439|         |         |         |
+CLK_100MHz                   |    5.738|         |         |         |
+wc/tick_generator/clk_out_1Hz|    4.855|         |         |         |
+wc/tick_generator/clk_out_5Hz|    3.396|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock wc/tick_generator/clk_out_5Hz
@@ -783,23 +784,23 @@ Clock to Setup on destination clock wc/tick_generator/clk_out_5Hz
                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------+---------+---------+---------+---------+
-CLK_100MHz                   |    6.469|         |         |         |
-wc/tick_generator/clk_out_1Hz|    2.259|         |         |         |
-wc/tick_generator/clk_out_5Hz|    4.579|         |         |         |
+CLK_100MHz                   |    6.349|         |         |         |
+wc/tick_generator/clk_out_1Hz|    2.291|         |         |         |
+wc/tick_generator/clk_out_5Hz|    4.545|         |         |         |
 -----------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 13.21 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.85 secs
  
 --> 
 
 
-Total memory usage is 483584 kilobytes
+Total memory usage is 483768 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 

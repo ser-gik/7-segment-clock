@@ -46,16 +46,19 @@ module wall_clock #(
     input wire adjustment_next,
     input wire adjustment_increment,
     
-    input wire clk
+    input wire clk,
+	 
+	 input wire reset
 );
     wire clk_1Hz;
     wire clk_adjust_reg;
+	 wire[5:0] decimal_point_enable_mask;
 
     tick_gen #(
-        .CLK_IN_RATE_HZ(100)
+        .CLK_IN_RATE_HZ(CLK_RATE_HZ)
         ) tick_generator (
         .clk_in(clk), 
-        .reset(1'b0), 
+        .reset(reset), 
         .clk_out_1Hz(clk_1Hz), 
         .clk_out_5Hz(clk_adjust_reg)
         );
@@ -110,12 +113,18 @@ module wall_clock #(
         .blink_out(blink_out)
         );
 
+
+	 assign decimal_point_enable_mask = {
+        1'b0, clk_1Hz, 1'b0, clk_1Hz, 1'b0, 1'b0
+    };
+
     led_display_driver #(.CLK_RATE_HZ(CLK_RATE_HZ)) leds (
         .data(select_reg ? adjust_out : timer_out), 
-        .digit_enable_mask(blink_out), 
+        .digit_enable_mask(blink_out),
+        .decimal_point_enable_mask(decimal_point_enable_mask),
         .display_led_segments(display_led_segments), 
         .display_led_enable_mask(display_led_enable_mask), 
-        .reset(1'b0), 
+        .reset(reset), 
         .clk(clk)
         );
 
@@ -146,9 +155,8 @@ module wall_clock #(
         ) mode_watchdog (
         .sense_inputs({adjustment_next, adjustment_increment}), 
         .clk(clk_1Hz), 
-        .reset(1'b0), 
+        .reset(reset), 
         .bark(mode_ctrl_reset)
         );
 
 endmodule
-

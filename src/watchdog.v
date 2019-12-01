@@ -11,7 +11,6 @@ module watchdog #(
 );
     parameter COUNTER_WIDTH = $clog2(TICK_TO_BARK) + 1;
     reg[COUNTER_WIDTH-1:0] counter;
-    reg[NUM_SENSE_INPUTS-1:0] prev_sense_inputs;
     reg out_enable;
 
     assign bark = out_enable && counter == TICK_TO_BARK;
@@ -19,11 +18,9 @@ module watchdog #(
     always @(posedge clk) begin
         if (reset) begin
             counter <= 1'b1;
-            prev_sense_inputs <= {NUM_SENSE_INPUTS{1'b0}};
             out_enable <= 1'b1;
         end else begin
-            prev_sense_inputs <= sense_inputs;
-            if (prev_sense_inputs != sense_inputs) begin
+            if (sense_inputs) begin
                 counter <= 1'b1;
                 out_enable <= 1'b1;
             end else if (counter != TICK_TO_BARK) begin
@@ -34,4 +31,3 @@ module watchdog #(
         end
     end
 endmodule
-

@@ -1,12 +1,10 @@
 //! **************************************************************************
-// Written by: Map P.20160913 on Fri Nov 29 00:07:36 2019
+// Written by: Map P.20160913 on Sun Dec 01 04:53:10 2019
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
 COMP "CLK_100MHz" LOCATE = SITE "V10" LEVEL 1;
-COMP "Switch<0>" LOCATE = SITE "K18" LEVEL 1;
-COMP "Switch<1>" LOCATE = SITE "K17" LEVEL 1;
 COMP "IO_P6<0>" LOCATE = SITE "T3" LEVEL 1;
 COMP "IO_P6<1>" LOCATE = SITE "R3" LEVEL 1;
 COMP "IO_P6<2>" LOCATE = SITE "V5" LEVEL 1;
@@ -23,6 +21,9 @@ COMP "IO_P7<4>" LOCATE = SITE "T8" LEVEL 1;
 COMP "IO_P7<5>" LOCATE = SITE "R8" LEVEL 1;
 COMP "IO_P7<6>" LOCATE = SITE "V8" LEVEL 1;
 COMP "IO_P7<7>" LOCATE = SITE "U8" LEVEL 1;
+COMP "Switch<0>" LOCATE = SITE "K18" LEVEL 1;
+COMP "Switch<1>" LOCATE = SITE "K17" LEVEL 1;
+COMP "Switch<2>" LOCATE = SITE "L17" LEVEL 1;
 NET "CLK_100MHz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 SCHEMATIC END;
 

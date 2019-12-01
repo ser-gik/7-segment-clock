@@ -9,6 +9,7 @@ module led_display_driver #(
     )(
     input wire[23:0] data,
     input wire[5:0] digit_enable_mask,
+	 input wire[5:0] decimal_point_enable_mask, 
 
     output reg[7:0] display_led_segments,
     output wire[5:0] display_led_enable_mask,
@@ -18,7 +19,7 @@ module led_display_driver #(
 );
     // Divide input clock frequency to get something suitable for
     // refreshing LED digits.
-    localparam DISPLAY_REFRESH_RATE_HZ = 60;
+    localparam DISPLAY_REFRESH_RATE_HZ = 80;
     localparam DIGIT_REFRESH_RATE_HZ = DISPLAY_REFRESH_RATE_HZ * 6;
     // ISE doesn't allow clog2() for localparams
     parameter CLK_DIVIDER_STAGES = $clog2(CLK_RATE_HZ / DIGIT_REFRESH_RATE_HZ) - 1;
@@ -59,27 +60,33 @@ module led_display_driver #(
         case (current_active)
             6'b1 << 0 : begin
                 current_active <= 6'b1 << 1;
-                display_led_segments <= bcd_to_7seg(data[7:4]);
+                display_led_segments <= bcd_to_7seg(data[7:4])
+                                        | decimal_point_enable_mask[1];
             end
             6'b1 << 1 : begin
                 current_active <= 6'b1 << 2;
-                display_led_segments <= bcd_to_7seg(data[11:8]);
+                display_led_segments <= bcd_to_7seg(data[11:8])
+                                        | decimal_point_enable_mask[2];
             end
             6'b1 << 2 : begin
                 current_active <= 6'b1 << 3;
-                display_led_segments <= bcd_to_7seg(data[15:12]);
+                display_led_segments <= bcd_to_7seg(data[15:12])
+                                        | decimal_point_enable_mask[3];
             end
             6'b1 << 3 : begin
                 current_active <= 6'b1 << 4;
-                display_led_segments <= bcd_to_7seg(data[19:16]);
+                display_led_segments <= bcd_to_7seg(data[19:16])
+                                        | decimal_point_enable_mask[4];
             end
             6'b1 << 4 : begin
                 current_active <= 6'b1 << 5;
-                display_led_segments <= bcd_to_7seg(data[23:20]);
+                display_led_segments <= bcd_to_7seg(data[23:20])
+                                        | decimal_point_enable_mask[5];
             end
             default : begin
                 current_active <= 6'b1 << 0;
-                display_led_segments <= bcd_to_7seg(data[3:0]);
+                display_led_segments <= bcd_to_7seg(data[3:0])
+                                        | decimal_point_enable_mask[0];
             end
         endcase
     end

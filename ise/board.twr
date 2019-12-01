@@ -28,124 +28,19 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: NET "CLK_100MHz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 332 paths analyzed, 122 endpoints analyzed, 0 failing endpoints
+ 1250 paths analyzed, 203 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   3.688ns.
+ Minimum period is   4.119ns.
 --------------------------------------------------------------------------------
 
-Paths for end point wc/mode_ctrl/adjust_mode_FSM_FFd1 (SLICE_X13Y17.C1), 4 paths
+Paths for end point wc/mode_ctrl/adjust_mode_FSM_FFd2 (SLICE_X15Y20.A5), 3 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     6.312ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/tick_generator/clk_out_5Hz (FF)
-  Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd1 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      3.637ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.016ns (0.295 - 0.311)
-  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
-  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: wc/tick_generator/clk_out_5Hz to wc/mode_ctrl/adjust_mode_FSM_FFd1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X12Y30.DQ      Tcko                  0.525   wc/tick_generator/clk_out_5Hz
-                                                       wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y17.D4      net (fanout=5)        1.965   wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y17.D       Tilo                  0.254   wc/mode_ctrl/adjust_mode_FSM_FFd2
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.C1      net (fanout=1)        0.520   wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In3
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1
-    -------------------------------------------------  ---------------------------
-    Total                                      3.637ns (1.152ns logic, 2.485ns route)
-                                                       (31.7% logic, 68.3% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     7.735ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/mode_ctrl/adjuster_load (FF)
-  Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd1 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      2.230ns (Levels of Logic = 2)
-  Clock Path Skew:      0.000ns
-  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
-  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: wc/mode_ctrl/adjuster_load to wc/mode_ctrl/adjust_mode_FSM_FFd1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X13Y17.BQ      Tcko                  0.430   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load
-    SLICE_X12Y17.D1      net (fanout=34)       0.653   wc/mode_ctrl/adjuster_load
-    SLICE_X12Y17.D       Tilo                  0.254   wc/mode_ctrl/adjust_mode_FSM_FFd2
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.C1      net (fanout=1)        0.520   wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In3
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1
-    -------------------------------------------------  ---------------------------
-    Total                                      2.230ns (1.057ns logic, 1.173ns route)
-                                                       (47.4% logic, 52.6% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     8.016ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/mode_ctrl/prev_adjuster_clk (FF)
-  Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd1 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      1.949ns (Levels of Logic = 2)
-  Clock Path Skew:      0.000ns
-  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
-  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: wc/mode_ctrl/prev_adjuster_clk to wc/mode_ctrl/adjust_mode_FSM_FFd1
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X13Y17.AQ      Tcko                  0.430   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/prev_adjuster_clk
-    SLICE_X12Y17.D3      net (fanout=2)        0.372   wc/mode_ctrl/prev_adjuster_clk
-    SLICE_X12Y17.D       Tilo                  0.254   wc/mode_ctrl/adjust_mode_FSM_FFd2
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.C1      net (fanout=1)        0.520   wc/mode_ctrl/adjust_mode_FSM_FFd1-In2
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1-In3
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd1
-    -------------------------------------------------  ---------------------------
-    Total                                      1.949ns (1.057ns logic, 0.892ns route)
-                                                       (54.2% logic, 45.8% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point wc/mode_ctrl/adjust_mode_FSM_FFd2 (SLICE_X12Y17.C4), 3 paths
---------------------------------------------------------------------------------
-Slack (setup path):     6.440ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     5.881ns (requirement - (data path - clock path skew + uncertainty))
   Source:               wc/tick_generator/clk_out_5Hz (FF)
   Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.509ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.016ns (0.295 - 0.311)
+  Data Path Delay:      4.061ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.023ns (0.291 - 0.314)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -160,26 +55,26 @@ Slack (setup path):     6.440ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X12Y30.DQ      Tcko                  0.525   wc/tick_generator/clk_out_5Hz
+    SLICE_X16Y30.AQ      Tcko                  0.525   wc/tick_generator/clk_out_5Hz
                                                        wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y17.D4      net (fanout=5)        1.965   wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y17.DMUX    Tilo                  0.326   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.C3      net (fanout=5)        1.974   wc/tick_generator/clk_out_5Hz
+    SLICE_X15Y20.CMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.C4      net (fanout=1)        0.354   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.CLK     Tas                   0.339   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.A5      net (fanout=1)        0.852   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
+    SLICE_X15Y20.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In3
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2
     -------------------------------------------------  ---------------------------
-    Total                                      3.509ns (1.190ns logic, 2.319ns route)
-                                                       (33.9% logic, 66.1% route)
+    Total                                      4.061ns (1.235ns logic, 2.826ns route)
+                                                       (30.4% logic, 69.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.852ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     6.294ns (requirement - (data path - clock path skew + uncertainty))
   Source:               wc/mode_ctrl/adjuster_load (FF)
   Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.102ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.195 - 0.206)
+  Data Path Delay:      3.660ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.011ns (0.190 - 0.201)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -194,26 +89,26 @@ Slack (setup path):     7.852ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y17.BQ      Tcko                  0.430   wc/mode_ctrl/adjust_mode_FSM_FFd1
+    SLICE_X14Y20.CQ      Tcko                  0.476   wc/mode_ctrl/adjuster_load
                                                        wc/mode_ctrl/adjuster_load
-    SLICE_X12Y17.D1      net (fanout=34)       0.653   wc/mode_ctrl/adjuster_load
-    SLICE_X12Y17.DMUX    Tilo                  0.326   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.C5      net (fanout=34)       1.622   wc/mode_ctrl/adjuster_load
+    SLICE_X15Y20.CMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.C4      net (fanout=1)        0.354   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.CLK     Tas                   0.339   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.A5      net (fanout=1)        0.852   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
+    SLICE_X15Y20.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In3
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2
     -------------------------------------------------  ---------------------------
-    Total                                      2.102ns (1.095ns logic, 1.007ns route)
-                                                       (52.1% logic, 47.9% route)
+    Total                                      3.660ns (1.186ns logic, 2.474ns route)
+                                                       (32.4% logic, 67.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     8.133ns (requirement - (data path - clock path skew + uncertainty))
+Slack (setup path):     7.375ns (requirement - (data path - clock path skew + uncertainty))
   Source:               wc/mode_ctrl/prev_adjuster_clk (FF)
   Destination:          wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      1.821ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.195 - 0.206)
+  Data Path Delay:      2.579ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.011ns (0.190 - 0.201)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -228,29 +123,29 @@ Slack (setup path):     8.133ns (requirement - (data path - clock path skew + un
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X13Y17.AQ      Tcko                  0.430   wc/mode_ctrl/adjust_mode_FSM_FFd1
+    SLICE_X14Y20.AQ      Tcko                  0.476   wc/mode_ctrl/adjuster_load
                                                        wc/mode_ctrl/prev_adjuster_clk
-    SLICE_X12Y17.D3      net (fanout=2)        0.372   wc/mode_ctrl/prev_adjuster_clk
-    SLICE_X12Y17.DMUX    Tilo                  0.326   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.C2      net (fanout=2)        0.541   wc/mode_ctrl/prev_adjuster_clk
+    SLICE_X15Y20.CMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.C4      net (fanout=1)        0.354   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
-    SLICE_X12Y17.CLK     Tas                   0.339   wc/mode_ctrl/adjust_mode_FSM_FFd2
+    SLICE_X15Y20.A5      net (fanout=1)        0.852   wc/mode_ctrl/adjust_mode_FSM_FFd2-In1
+    SLICE_X15Y20.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2-In3
                                                        wc/mode_ctrl/adjust_mode_FSM_FFd2
     -------------------------------------------------  ---------------------------
-    Total                                      1.821ns (1.095ns logic, 0.726ns route)
-                                                       (60.1% logic, 39.9% route)
+    Total                                      2.579ns (1.186ns logic, 1.393ns route)
+                                                       (46.0% logic, 54.0% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point wc/mode_ctrl/adjuster_load (SLICE_X13Y17.B3), 3 paths
+Paths for end point wc/tick_generator/counter_1Hz_2 (SLICE_X16Y28.D2), 27 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     6.726ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/mode_ctrl/adjust_mode_FSM_FFd2 (FF)
-  Destination:          wc/mode_ctrl/adjuster_load (FF)
+Slack (setup path):     6.086ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_11 (FF)
+  Destination:          wc/tick_generator/counter_1Hz_2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      3.228ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.195 - 0.206)
+  Data Path Delay:      3.859ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.020ns (0.294 - 0.314)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -261,30 +156,33 @@ Slack (setup path):     6.726ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: wc/mode_ctrl/adjust_mode_FSM_FFd2 to wc/mode_ctrl/adjuster_load
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_11 to wc/tick_generator/counter_1Hz_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X12Y17.CQ      Tcko                  0.525   wc/mode_ctrl/adjust_mode_FSM_FFd2
-                                                       wc/mode_ctrl/adjust_mode_FSM_FFd2
-    SLICE_X13Y17.D1      net (fanout=56)       1.441   wc/mode_ctrl/adjust_mode_FSM_FFd2
-    SLICE_X13Y17.DMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set_SW0
-    SLICE_X13Y17.B3      net (fanout=1)        0.552   N80
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set
-                                                       wc/mode_ctrl/adjuster_load
+    SLICE_X19Y30.AQ      Tcko                  0.430   wc/tick_generator/counter<14>
+                                                       wc/tick_generator/counter_11
+    SLICE_X17Y28.C2      net (fanout=2)        1.197   wc/tick_generator/counter<11>
+    SLICE_X17Y28.C       Tilo                  0.259   N79
+                                                       wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>3
+    SLICE_X17Y28.A2      net (fanout=28)       0.590   wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>2
+    SLICE_X17Y28.A       Tilo                  0.259   N79
+                                                       wc/tick_generator/Mcount_counter_1Hz_val1
+    SLICE_X16Y28.D2      net (fanout=3)        0.785   wc/tick_generator/Mcount_counter_1Hz_val
+    SLICE_X16Y28.CLK     Tas                   0.339   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_2_rstpot
+                                                       wc/tick_generator/counter_1Hz_2
     -------------------------------------------------  ---------------------------
-    Total                                      3.228ns (1.235ns logic, 1.993ns route)
-                                                       (38.3% logic, 61.7% route)
+    Total                                      3.859ns (1.287ns logic, 2.572ns route)
+                                                       (33.4% logic, 66.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.701ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/mode_ctrl/timer_load (FF)
-  Destination:          wc/mode_ctrl/adjuster_load (FF)
+Slack (setup path):     6.334ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_13 (FF)
+  Destination:          wc/tick_generator/counter_1Hz_2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.252ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.012ns (0.195 - 0.207)
+  Data Path Delay:      3.611ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.020ns (0.294 - 0.314)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -295,30 +193,33 @@ Slack (setup path):     7.701ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: wc/mode_ctrl/timer_load to wc/mode_ctrl/adjuster_load
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_13 to wc/tick_generator/counter_1Hz_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X12Y16.CQ      Tcko                  0.525   wc/mode_ctrl/timer_load
-                                                       wc/mode_ctrl/timer_load
-    SLICE_X13Y17.D5      net (fanout=39)       0.465   wc/mode_ctrl/timer_load
-    SLICE_X13Y17.DMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set_SW0
-    SLICE_X13Y17.B3      net (fanout=1)        0.552   N80
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set
-                                                       wc/mode_ctrl/adjuster_load
+    SLICE_X19Y30.CQ      Tcko                  0.430   wc/tick_generator/counter<14>
+                                                       wc/tick_generator/counter_13
+    SLICE_X17Y28.C1      net (fanout=2)        0.949   wc/tick_generator/counter<13>
+    SLICE_X17Y28.C       Tilo                  0.259   N79
+                                                       wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>3
+    SLICE_X17Y28.A2      net (fanout=28)       0.590   wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>2
+    SLICE_X17Y28.A       Tilo                  0.259   N79
+                                                       wc/tick_generator/Mcount_counter_1Hz_val1
+    SLICE_X16Y28.D2      net (fanout=3)        0.785   wc/tick_generator/Mcount_counter_1Hz_val
+    SLICE_X16Y28.CLK     Tas                   0.339   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_2_rstpot
+                                                       wc/tick_generator/counter_1Hz_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.252ns (1.235ns logic, 1.017ns route)
-                                                       (54.8% logic, 45.2% route)
+    Total                                      3.611ns (1.287ns logic, 2.324ns route)
+                                                       (35.6% logic, 64.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     7.766ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               wc/mode_ctrl/prev_next_mode (FF)
-  Destination:          wc/mode_ctrl/adjuster_load (FF)
+Slack (setup path):     6.353ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_21 (FF)
+  Destination:          wc/tick_generator/counter_1Hz_2 (FF)
   Requirement:          10.000ns
-  Data Path Delay:      2.188ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.011ns (0.195 - 0.206)
+  Data Path Delay:      3.597ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.015ns (0.193 - 0.208)
   Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
   Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
@@ -329,85 +230,185 @@ Slack (setup path):     7.766ns (requirement - (data path - clock path skew + un
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: wc/mode_ctrl/prev_next_mode to wc/mode_ctrl/adjuster_load
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_21 to wc/tick_generator/counter_1Hz_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X12Y17.AQ      Tcko                  0.525   wc/mode_ctrl/adjust_mode_FSM_FFd2
-                                                       wc/mode_ctrl/prev_next_mode
-    SLICE_X13Y17.D3      net (fanout=2)        0.401   wc/mode_ctrl/prev_next_mode
-    SLICE_X13Y17.DMUX    Tilo                  0.337   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set_SW0
-    SLICE_X13Y17.B3      net (fanout=1)        0.552   N80
-    SLICE_X13Y17.CLK     Tas                   0.373   wc/mode_ctrl/adjust_mode_FSM_FFd1
-                                                       wc/mode_ctrl/adjuster_load_glue_set
-                                                       wc/mode_ctrl/adjuster_load
+    SLICE_X17Y31.CQ      Tcko                  0.430   wc/tick_generator/counter<22>
+                                                       wc/tick_generator/counter_21
+    SLICE_X16Y30.B1      net (fanout=2)        0.730   wc/tick_generator/counter<21>
+    SLICE_X16Y30.B       Tilo                  0.254   wc/tick_generator/clk_out_5Hz
+                                                       wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>4
+    SLICE_X17Y28.A1      net (fanout=28)       0.800   wc/tick_generator/GND_3_o_GND_3_o_equal_2_o<25>3
+    SLICE_X17Y28.A       Tilo                  0.259   N79
+                                                       wc/tick_generator/Mcount_counter_1Hz_val1
+    SLICE_X16Y28.D2      net (fanout=3)        0.785   wc/tick_generator/Mcount_counter_1Hz_val
+    SLICE_X16Y28.CLK     Tas                   0.339   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_2_rstpot
+                                                       wc/tick_generator/counter_1Hz_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.188ns (1.235ns logic, 0.953ns route)
-                                                       (56.4% logic, 43.6% route)
+    Total                                      3.597ns (1.282ns logic, 2.315ns route)
+                                                       (35.6% logic, 64.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wc/tick_generator/counter_23 (SLICE_X17Y30.A3), 24 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     6.243ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_1 (FF)
+  Destination:          wc/tick_generator/counter_23 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.712ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.196 - 0.206)
+  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_1 to wc/tick_generator/counter_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y29.BQ      Tcko                  0.525   wc/tick_generator/counter<2>
+                                                       wc/tick_generator/counter_1
+    SLICE_X18Y27.B4      net (fanout=3)        0.740   wc/tick_generator/counter<1>
+    SLICE_X18Y27.COUT    Topcyb                0.448   wc/tick_generator/Mcount_counter_cy<3>
+                                                       wc/tick_generator/counter<1>_rt.1
+                                                       wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<7>
+                                                       wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<11>
+                                                       wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<15>
+                                                       wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<19>
+                                                       wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.135   wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.DMUX    Tcind                 0.289   wc/tick_generator/Result<23>
+                                                       wc/tick_generator/Mcount_counter_xor<23>
+    SLICE_X17Y30.A3      net (fanout=1)        0.826   wc/tick_generator/Result<23>
+    SLICE_X17Y30.CLK     Tas                   0.373   wc/tick_generator/counter<23>
+                                                       wc/tick_generator/counter_23_rstpot
+                                                       wc/tick_generator/counter_23
+    -------------------------------------------------  ---------------------------
+    Total                                      3.712ns (1.999ns logic, 1.713ns route)
+                                                       (53.9% logic, 46.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.281ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_2 (FF)
+  Destination:          wc/tick_generator/counter_23 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.674ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.196 - 0.206)
+  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_2 to wc/tick_generator/counter_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y29.DQ      Tcko                  0.525   wc/tick_generator/counter<2>
+                                                       wc/tick_generator/counter_2
+    SLICE_X18Y27.C3      net (fanout=3)        0.825   wc/tick_generator/counter<2>
+    SLICE_X18Y27.COUT    Topcyc                0.325   wc/tick_generator/Mcount_counter_cy<3>
+                                                       wc/tick_generator/counter<2>_rt.1
+                                                       wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<7>
+                                                       wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<11>
+                                                       wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<15>
+                                                       wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<19>
+                                                       wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.135   wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.DMUX    Tcind                 0.289   wc/tick_generator/Result<23>
+                                                       wc/tick_generator/Mcount_counter_xor<23>
+    SLICE_X17Y30.A3      net (fanout=1)        0.826   wc/tick_generator/Result<23>
+    SLICE_X17Y30.CLK     Tas                   0.373   wc/tick_generator/counter<23>
+                                                       wc/tick_generator/counter_23_rstpot
+                                                       wc/tick_generator/counter_23
+    -------------------------------------------------  ---------------------------
+    Total                                      3.674ns (1.876ns logic, 1.798ns route)
+                                                       (51.1% logic, 48.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     6.328ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               wc/tick_generator/counter_0 (FF)
+  Destination:          wc/tick_generator/counter_23 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      3.627ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.196 - 0.206)
+  Source Clock:         CLK_100MHz_BUFGP rising at 0.000ns
+  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: wc/tick_generator/counter_0 to wc/tick_generator/counter_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y29.AQ      Tcko                  0.525   wc/tick_generator/counter<2>
+                                                       wc/tick_generator/counter_0
+    SLICE_X18Y27.A5      net (fanout=3)        0.631   wc/tick_generator/counter<0>
+    SLICE_X18Y27.COUT    Topcya                0.472   wc/tick_generator/Mcount_counter_cy<3>
+                                                       wc/tick_generator/Mcount_counter_lut<0>_INV_0
+                                                       wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<3>
+    SLICE_X18Y28.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<7>
+                                                       wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<7>
+    SLICE_X18Y29.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<11>
+                                                       wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<11>
+    SLICE_X18Y30.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<15>
+                                                       wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.CIN     net (fanout=1)        0.003   wc/tick_generator/Mcount_counter_cy<15>
+    SLICE_X18Y31.COUT    Tbyp                  0.091   wc/tick_generator/Mcount_counter_cy<19>
+                                                       wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.CIN     net (fanout=1)        0.135   wc/tick_generator/Mcount_counter_cy<19>
+    SLICE_X18Y32.DMUX    Tcind                 0.289   wc/tick_generator/Result<23>
+                                                       wc/tick_generator/Mcount_counter_xor<23>
+    SLICE_X17Y30.A3      net (fanout=1)        0.826   wc/tick_generator/Result<23>
+    SLICE_X17Y30.CLK     Tas                   0.373   wc/tick_generator/counter<23>
+                                                       wc/tick_generator/counter_23_rstpot
+                                                       wc/tick_generator/counter_23
+    -------------------------------------------------  ---------------------------
+    Total                                      3.627ns (2.023ns logic, 1.604ns route)
+                                                       (55.8% logic, 44.2% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: NET "CLK_100MHz_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point wc/tick_generator/counter_1Hz_0 (SLICE_X7Y30.A6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.444ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               wc/tick_generator/counter_1Hz_0 (FF)
-  Destination:          wc/tick_generator/counter_1Hz_0 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.444ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         CLK_100MHz_BUFGP rising at 10.000ns
-  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: wc/tick_generator/counter_1Hz_0 to wc/tick_generator/counter_1Hz_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y30.AQ       Tcko                  0.198   wc/tick_generator/counter_1Hz<2>
-                                                       wc/tick_generator/counter_1Hz_0
-    SLICE_X7Y30.A6       net (fanout=3)        0.031   wc/tick_generator/counter_1Hz<0>
-    SLICE_X7Y30.CLK      Tah         (-Th)    -0.215   wc/tick_generator/counter_1Hz<2>
-                                                       wc/tick_generator/Mcount_counter_1Hz_xor<0>11_INV_0
-                                                       wc/tick_generator/counter_1Hz_0
-    -------------------------------------------------  ---------------------------
-    Total                                      0.444ns (0.413ns logic, 0.031ns route)
-                                                       (93.0% logic, 7.0% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point wc/tick_generator/clk_out_1Hz (SLICE_X7Y29.D6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.449ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               wc/tick_generator/clk_out_1Hz (FF)
-  Destination:          wc/tick_generator/clk_out_1Hz (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.449ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         CLK_100MHz_BUFGP rising at 10.000ns
-  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: wc/tick_generator/clk_out_1Hz to wc/tick_generator/clk_out_1Hz
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X7Y29.DQ       Tcko                  0.198   wc/tick_generator/clk_out_1Hz
-                                                       wc/tick_generator/clk_out_1Hz
-    SLICE_X7Y29.D6       net (fanout=9)        0.036   wc/tick_generator/clk_out_1Hz
-    SLICE_X7Y29.CLK      Tah         (-Th)    -0.215   wc/tick_generator/clk_out_1Hz
-                                                       wc/tick_generator/clk_out_1Hz_INV_4_o1_INV_0
-                                                       wc/tick_generator/clk_out_1Hz
-    -------------------------------------------------  ---------------------------
-    Total                                      0.449ns (0.413ns logic, 0.036ns route)
-                                                       (92.0% logic, 8.0% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point wc/tick_generator/clk_out_5Hz (SLICE_X12Y30.D6), 1 path
+Paths for end point wc/tick_generator/clk_out_5Hz (SLICE_X16Y30.A6), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.458ns (requirement - (clock path skew + uncertainty - data path))
   Source:               wc/tick_generator/clk_out_5Hz (FF)
@@ -423,15 +424,71 @@ Slack (hold path):      0.458ns (requirement - (clock path skew + uncertainty - 
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X12Y30.DQ      Tcko                  0.234   wc/tick_generator/clk_out_5Hz
+    SLICE_X16Y30.AQ      Tcko                  0.234   wc/tick_generator/clk_out_5Hz
                                                        wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y30.D6      net (fanout=5)        0.027   wc/tick_generator/clk_out_5Hz
-    SLICE_X12Y30.CLK     Tah         (-Th)    -0.197   wc/tick_generator/clk_out_5Hz
-                                                       wc/tick_generator/clk_out_5Hz_INV_2_o1_INV_0
+    SLICE_X16Y30.A6      net (fanout=5)        0.027   wc/tick_generator/clk_out_5Hz
+    SLICE_X16Y30.CLK     Tah         (-Th)    -0.197   wc/tick_generator/clk_out_5Hz
+                                                       wc/tick_generator/clk_out_5Hz_dpot
                                                        wc/tick_generator/clk_out_5Hz
     -------------------------------------------------  ---------------------------
     Total                                      0.458ns (0.431ns logic, 0.027ns route)
                                                        (94.1% logic, 5.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wc/tick_generator/counter_1Hz_0 (SLICE_X16Y28.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.462ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               wc/tick_generator/counter_1Hz_0 (FF)
+  Destination:          wc/tick_generator/counter_1Hz_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.462ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_100MHz_BUFGP rising at 10.000ns
+  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: wc/tick_generator/counter_1Hz_0 to wc/tick_generator/counter_1Hz_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y28.AQ      Tcko                  0.234   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_0
+    SLICE_X16Y28.A6      net (fanout=5)        0.031   wc/tick_generator/counter_1Hz<0>
+    SLICE_X16Y28.CLK     Tah         (-Th)    -0.197   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_0_rstpot
+                                                       wc/tick_generator/counter_1Hz_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.462ns (0.431ns logic, 0.031ns route)
+                                                       (93.3% logic, 6.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point wc/tick_generator/counter_1Hz_2 (SLICE_X16Y28.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.462ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               wc/tick_generator/counter_1Hz_2 (FF)
+  Destination:          wc/tick_generator/counter_1Hz_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.462ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CLK_100MHz_BUFGP rising at 10.000ns
+  Destination Clock:    CLK_100MHz_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: wc/tick_generator/counter_1Hz_2 to wc/tick_generator/counter_1Hz_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y28.DQ      Tcko                  0.234   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_2
+    SLICE_X16Y28.D6      net (fanout=3)        0.031   wc/tick_generator/counter_1Hz<2>
+    SLICE_X16Y28.CLK     Tah         (-Th)    -0.197   wc/tick_generator/counter_1Hz<2>
+                                                       wc/tick_generator/counter_1Hz_2_rstpot
+                                                       wc/tick_generator/counter_1Hz_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.462ns (0.431ns logic, 0.031ns route)
+                                                       (93.3% logic, 6.7% route)
 
 --------------------------------------------------------------------------------
 
@@ -448,17 +505,17 @@ Slack: 7.334ns (period - min period limit)
 Slack: 9.520ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: wc/mode_ctrl/timer_load/CLK
-  Logical resource: wc/mode_ctrl/timer_load/CK
-  Location pin: SLICE_X12Y16.CLK
+  Physical resource: wc/leds/div_stages<7>/CLK
+  Logical resource: wc/leds/div_stages_7/CK
+  Location pin: SLICE_X16Y32.CLK
   Clock network: CLK_100MHz_BUFGP
 --------------------------------------------------------------------------------
 Slack: 9.520ns (period - min period limit)
   Period: 10.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: wc/mode_ctrl/adjust_mode_FSM_FFd2/CLK
-  Logical resource: wc/mode_ctrl/prev_next_mode/CK
-  Location pin: SLICE_X12Y17.CLK
+  Physical resource: wc/leds/div_stages<11>/CLK
+  Logical resource: wc/leds/div_stages_8/CK
+  Location pin: SLICE_X16Y33.CLK
   Clock network: CLK_100MHz_BUFGP
 --------------------------------------------------------------------------------
 
@@ -475,7 +532,7 @@ Clock to Setup on destination clock CLK_100MHz
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_100MHz     |    3.688|         |         |         |
+CLK_100MHz     |    4.119|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -484,23 +541,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 332 paths, 0 nets, and 106 connections
+Constraints cover 1250 paths, 0 nets, and 291 connections
 
 Design statistics:
-   Minimum period:   3.688ns{1}   (Maximum frequency: 271.150MHz)
+   Minimum period:   4.119ns{1}   (Maximum frequency: 242.777MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Fri Nov 29 00:08:03 2019 
+Analysis completed Sun Dec  1 04:53:36 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 391 MB
+Peak Memory Usage: 392 MB
 
 
 
